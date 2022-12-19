@@ -23,7 +23,8 @@ GROUP BY `exam_id`;
 
 ### 4. Contare quanti corsi di laurea ci sono per ogni dipartimento:
 ``` sql
-SELECT COUNT(*) AS `total_degrees`, `department_id`
+SELECT COUNT(*) AS `total_degrees`, `department_id`, `departments`.`name` AS `department_name`
 FROM `degrees`
+JOIN `departments` ON `departments`.`id` = `degrees`.`department_id`
 GROUP BY `department_id`;
 ```
